@@ -24,14 +24,14 @@
   <url-pattern>/register</url-pattern>
 </servlet-mapping>
 
-<servlet>
+<!-- <servlet>
   <servlet-name>UserListServlet</servlet-name>
   <servlet-class>com.example.UserListServlet</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>UserListServlet</servlet-name>
   <url-pattern>/users</url-pattern>
-</servlet-mapping>
+</servlet-mapping> -->
 
 
   <welcome-file-list>

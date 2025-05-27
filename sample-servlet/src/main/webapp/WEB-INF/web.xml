@@ -14,6 +14,7 @@
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
   <servlet>
@@ -51,4 +52,6 @@
     </jsp-property-group>
   </jsp-config>
 >>>>>>> a34c597 (jinjer的なシステムの構成構築)
+=======
+>>>>>>> c0bd3d2 (docker init)
 </web-app>

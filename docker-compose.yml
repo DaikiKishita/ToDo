@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  maven:
+    image: maven:3.9-eclipse-temurin-17
+    container_name: maven-builder
+    volumes:
+      - ./sample-servlet:/usr/src/app
+    working_dir: /usr/src/app
+    command: mvn clean package
+
+  tomcat:
+    image: tomcat:10.1-jdk17
+    container_name: tomcat-server
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./sample-servlet/target/sample.war:/usr/local/tomcat/webapps/sample.war

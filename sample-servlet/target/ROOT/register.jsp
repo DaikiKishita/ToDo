@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- <meta charset="UTF-8"> -->
     <title>ユーザー登録</title>
 </head>
 <body>

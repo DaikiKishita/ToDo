@@ -24,7 +24,7 @@
   </dependencies>
 
   <build>
-    <finalName>ROOT</finalName>
+    <finalName>sample</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-war-plugin</artifactId>

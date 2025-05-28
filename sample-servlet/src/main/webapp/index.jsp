@@ -4,16 +4,7 @@
     <%@ include file="/WEB-INF/jsp/component/head.jsp" %>
 </head>
 <body>
-    <header>
-        <h1>ToDoアプリ</h1>
-        <nav>
-            <ul>
-                <li><a href="/">ホーム</a></li>
-                <li><a href="/register">ユーザー登録</a></li>
-                <li><a href="/login">ログイン</a></li>
-            </ul>
-        </nav>
-    </header>
+    <%@ include file="/WEB-INF/jsp/component/header.jsp" %>
     <main>
         <h2>ようこそ！</h2>
         <p>このアプリは、ユーザーがToDoリストを管理できるシンプルなアプリケーションです。</p>
@@ -22,8 +13,6 @@
         <p>まずは<a href="/register">ユーザー登録</a>を行ってください。</p>
         <p>すでにアカウントをお持ちの方は、<a href="/login">ログイン</a>してください。</p>
     </main>
-    <footer>
-        <p>&copy; 2023 ToDoアプリ</p>
-    </footer>
+    <%@ include file="/WEB-INF/jsp/component/footer.jsp" %>
 </body>
 </html>

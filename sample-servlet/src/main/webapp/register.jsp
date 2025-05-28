@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
     <%@ include file="/WEB-INF/jsp/component/head.jsp" %>
-=======
-    <title>ユーザー登録</title>
->>>>>>> a34c597 (jinjer的なシステムの構成構築)
 </head>
 <body>
 <%@ include file="/WEB-INF/jsp/component/header.jsp" %>

@@ -13,9 +13,6 @@
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
   <servlet>
   <servlet-name>RegisterServlet</servlet-name>
@@ -51,7 +48,4 @@
       <page-encoding>UTF-8</page-encoding>
     </jsp-property-group>
   </jsp-config>
->>>>>>> a34c597 (jinjer的なシステムの構成構築)
-=======
->>>>>>> c0bd3d2 (docker init)
 </web-app>

@@ -36,7 +36,7 @@ public class RegisterServlet extends HttpServlet {
     }
 
     // 登録済ユーザーを取得する別の Servlet からアクセスできるように
-    public static Hash<String,User> getUserList() {
+    public static HashMap<String,User> getUserList() {
         return userDict;
     }
 }

@@ -9,7 +9,15 @@ import java.util.*;
 public class RegisterServlet extends HttpServlet {
 
     // アプリケーション全体で共有するユーザーリスト
-    private static List<User> userList = new ArrayList<>();
+    private static HashMap<String,User> userDict = new HashMap<String,User>();
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/register.jsp");
+        dispatcher.forward(request, response);
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -18,19 +26,17 @@ public class RegisterServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        synchronized (userList) {
-            userList.add(new User(username, password));
+        synchronized (userDict) {
+            userDict.put(username,new User(username, password));
         }
 
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        out.println("<h2>ユーザー登録完了</h2>");
-        out.println("<p>ユーザー名: " + username + "</p>");
-        out.println("<a href=\"users\">登録済ユーザー一覧</a>");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp.jsp");
+        request.setAttribute("message", "ユーザー登録が完了しました。ログインしてください。");
+        dispatcher.forward(request, response);
     }
 
     // 登録済ユーザーを取得する別の Servlet からアクセスできるように
-    public static List<User> getUserList() {
-        return userList;
+    public static Hash<String,User> getUserList() {
+        return userDict;
     }
 }

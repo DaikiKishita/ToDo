@@ -13,6 +13,4 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./sample-servlet/target/sample.war:/usr/local/tomcat/webapps/sample.war
-    depends_on:
-      - maven
+      - ./sample-servlet/target/ROOT.war:/usr/local/tomcat/webapps/ROOT.war

@@ -9,9 +9,10 @@
     <div class="justify-content-center bg-info-subtle py-3 px-5" style="max-width: 600px;">
         <p>${message}</p>
         <h2>ログインフォーム</h2>
-        <form method="post" action="${pageContext.request.contextPath}/login">
+        <form method="post" action="${pageContext.request.contextPath}/user/login">
             ユーザー名: <input type="text" name="username" class="my-2"><br>
             パスワード: <input type="password" name="password" class="my-2"><br>
+            <input type="hidden" name="action" value="login">
             <button type="submit" class="btn btn-primary my-2">ログイン</button>
         </form>
         <p>アカウントをお持ちでない方は<br>

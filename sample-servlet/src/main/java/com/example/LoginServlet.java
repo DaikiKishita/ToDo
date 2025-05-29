@@ -7,33 +7,18 @@ import java.util.*;
 
 public class LoginServlet extends HttpServlet {
 
-    // アプリケーション全体で共有するユーザーリスト
-    private static HashMap<String, User> userDict = RegisterServlet.getUserList();
-
+    //ログイン用ページを表示する
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        //ログインページに飛んで来た時にセッションを削除する
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate(); // セッションを無効化
+        }
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
         dispatcher.forward(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
-        User user = userDict.get(username);
-
-        if (user != null && user.getPassword().equals(password)) {
-            request.getSession().setAttribute("user", user);
-            response.sendRedirect("/task");
-        } else {
-            request.setAttribute("message", "ユーザー名またはパスワードが間違っています。");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
-            dispatcher.forward(request, response);
-        }
     }
 }

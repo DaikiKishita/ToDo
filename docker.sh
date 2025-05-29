@@ -1,9 +1,7 @@
 docker compose down --volumes
+docker compose up -d  maven
 
-sleep 10
-
-docker compose up -d --rm  maven
-
+#mavenでビルドする際に時間がかかるため待機
 sleep 10
 
 docker compose up -d tomcat

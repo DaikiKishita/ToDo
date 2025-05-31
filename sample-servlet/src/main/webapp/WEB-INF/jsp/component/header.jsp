@@ -10,6 +10,7 @@
                     User user = (User) session.getAttribute("user");
                 %>
                 <% if (user != null) { %>
+                    <span class="navbar-text">ようこそ、<%= user.getUsername() %>さん</span>
                     <form action="/user/logout" method="post" class="d-inline">
                         <button type="submit" class="btn btn-link navbar-brand btn-danger">ログアウト</button>
                     </form>

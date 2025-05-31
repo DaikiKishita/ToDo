@@ -28,6 +28,11 @@ public class Task{
         return completed;
     }
 
+    public void editTask(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
     public void complete() {
         this.completed = true;
     }

@@ -40,12 +40,21 @@
 </servlet>
   <servlet-mapping>
     <servlet-name>UserServlet</servlet-name>
-    <url-pattern>/user/register</url-pattern>
+    <url-pattern>/user/*</url-pattern>
+  </servlet-mapping>
+<servlet>
+ <servlet-name>TaskServlet</servlet-name>
+  <servlet-class>com.example.TaskServlet</servlet-class>
+</servlet>
+  <servlet-mapping>
+    <servlet-name>TaskServlet</servlet-name>
+    <url-pattern>/task</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>UserServlet</servlet-name>
-    <url-pattern>/user/login</url-pattern>
+    <servlet-name>TaskServlet</servlet-name>
+    <url-pattern>/task/*</url-pattern>
   </servlet-mapping>
+
 
 
   <session-config>

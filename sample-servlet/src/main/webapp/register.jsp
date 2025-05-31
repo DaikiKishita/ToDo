@@ -7,6 +7,9 @@
 <%@ include file="/WEB-INF/jsp/component/header.jsp" %>
 <div class="d-flex justify-content-center align-items-center text-center mt-2">
   <div class="justify-content-center bg-success-subtle py-3 px-5" style="max-width: 600px;">
+    <% if (request.getAttribute("message") != null) { %>
+      <p class="text-danger">${message}</p>
+    <% } %>
     <h2>登録</h2>
     <form method="post" action="${pageContext.request.contextPath}/user/register">
       ユーザー名: <input type="text" name="username" class = "my-2"><br>

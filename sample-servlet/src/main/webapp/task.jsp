@@ -42,8 +42,8 @@
                         for (Task task : tasks) {
                 %>
                     <tr class="<%= task.isCompleted() ? "table-secondary" : "table-primary" %>">
-                        <td><p class="fs-2"><%= task.getName() %></p></td>
-                        <td><p class="fs-3"><%= task.getDescription()%></p></td>
+                        <td><p class="fs-3"><%= task.getName() %></p></td>
+                        <td><p class="fs-4"><%= task.getDescription()%></p></td>
                         <td> 
                         <div class="d-flex justify-content-end">
                             <% if (!task.isCompleted()) { %>

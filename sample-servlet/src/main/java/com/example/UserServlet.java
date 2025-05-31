@@ -13,7 +13,7 @@ public class UserServlet extends HttpServlet {
     public void init() throws ServletException {
         // 初期ユーザーを定義
         setInitialUserList("test", "test");
-        setInitialUserList("admin", "admin123");
+        setInitialUserList("admin", "admin");
     }
     
     @Override
@@ -25,6 +25,14 @@ public class UserServlet extends HttpServlet {
 
         //登録時の処理
         if ("register".equals(action)){
+            //　同じユーザー名が存在する場合は登録できない
+            if (userDict.containsKey(username)) {
+                request.setAttribute("message", "このユーザー名はすでに使用されています。");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/register.jsp");
+                dispatcher.forward(request, response);
+                return;
+            }
+
             synchronized (userDict) {
             userDict.put(username, new User(username, password));
             }

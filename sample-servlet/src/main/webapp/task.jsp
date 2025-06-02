@@ -82,7 +82,7 @@
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <form method="post" action="<%= request.getContextPath() %>/task/create/">
+            <form method="post" action="/task/create/">
                 <div class="mb-3">
                     <label for="taskName" class="form-label">タスク名</label>
                     <input type="text" class="form-control" id="taskName" name="name" required>
